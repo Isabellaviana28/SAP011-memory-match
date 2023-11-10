@@ -1,0 +1,38 @@
+html{
+    height: 100%;
+    width: 100%;
+}
+
+.nome-pokemon {
+    display: flex;
+	border-radius: 8px;
+	padding: 25px;
+	margin: 25px;
+	align-items: center;
+	justify-content: center;
+}
+
+
+body{
+    background-color: #e093ff;
+}
+button
+{
+    background-position: center;
+    width: 140px;
+    background-color: rgb(197, 46, 147);
+    padding: 28px;
+    margin: 15px;
+    border: 8px solid black;
+    border-radius: 5px;
+    justify-content: center;
+}
+img {
+    width: 140px;
+    background-color: palevioletred;
+    padding: 28px;
+    margin: 8px;
+    border: 2px solid black;
+    border-radius: 5px;
+    justify-content: center;
+}
