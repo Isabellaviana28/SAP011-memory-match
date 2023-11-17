@@ -8,9 +8,13 @@ import data from "./data/pokemon/pokemon.js";
           for (let pokemon of pokemonsDuplicados)  {
             const div = document.createElement('div'); 
             const img = document.createElement('img');
+            div.classList.add("cards");
             img.src = pokemon.image;
             div.appendChild(img);
             container.appendChild(div);
+            div.addEventListener("click",()=>{
+                img.style.display = "block"
+            });
             
           }
                

@@ -2,7 +2,7 @@ html{
     height: 100%;
     width: 100%;
 }
-img {
+.cards {
     width: 140px;
     height: 140px;
     background-color: palevioletred;
@@ -12,6 +12,14 @@ img {
     border-radius: 5px;
     justify-content: center;
     
+    
+}
+.cards img {
+    display: none;
+}
+#pokemon {
+    display: flex;
+    flex-wrap: wrap;
 }
 body{
     background-color: #e093ff;
