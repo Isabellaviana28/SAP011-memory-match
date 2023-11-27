@@ -29,28 +29,23 @@ for (let pokemon of pokemonsDuplicados) {
       if (primeiraCarta === segundaCarta) {
         console.log("voce acertou");
         img.style.display = "block";
-        
-      } else{
-        
-        imagemDaprimeiraCarta.style.display = "none";
-        console.log (imagemDaprimeiraCarta)
+      } else {
+        console.log(imagemDaprimeiraCarta);
         img.style.display = "none";
         setTimeout(function () {
           img.style.display = "none";
+          imagemDaprimeiraCarta.style.display = "none";
         }, 5000); // 5000 milissegundos = 5 segundos
         img.style.display = "block";
       }
-    }
-    else{
-      imagemDaprimeiraCarta = img
+    } else {
+      imagemDaprimeiraCarta = img;
       primeiraCarta = event.target.firstChild.src;
       console.log(primeiraCarta);
       eSegundacarta = true;
       console.log("É Primeira carta");
       img.style.display = "block";
-      
     }
-
   });
 }
 let eSegundacarta = false;
