@@ -1,6 +1,7 @@
 import data from "./data/pokemon/pokemon.js";
 let primeiraCarta = "";
 let segundaCarta = "";
+let imagemDaprimeiraCarta = "";
 
 //document.getElementById('items').appendChild(App());//
 // Use JavaScript para definir a fonte da imagem com a URL da API
@@ -31,7 +32,9 @@ for (let pokemon of pokemonsDuplicados) {
         
       } else{
         
-        img.style.display = "block";
+        imagemDaprimeiraCarta.style.display = "none";
+        console.log (imagemDaprimeiraCarta)
+        img.style.display = "none";
         setTimeout(function () {
           img.style.display = "none";
         }, 5000); // 5000 milissegundos = 5 segundos
@@ -39,15 +42,12 @@ for (let pokemon of pokemonsDuplicados) {
       }
     }
     else{
-
+      imagemDaprimeiraCarta = img
       primeiraCarta = event.target.firstChild.src;
       console.log(primeiraCarta);
       eSegundacarta = true;
       console.log("É Primeira carta");
       img.style.display = "block";
-      setTimeout(function () {
-        img.style.display = "none";
-      }, 5000); // 5000 milissegundos = 5 segundos
       
     }
 
