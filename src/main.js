@@ -2,7 +2,7 @@ import data from "./data/pokemon/pokemon.js";
 let primeiraCarta = "";
 let segundaCarta = "";
 let imagemDaprimeiraCarta = "";
-
+let clickBloqueado = false;
 //document.getElementById('items').appendChild(App());//
 // Use JavaScript para definir a fonte da imagem com a URL da API
 console.log(data);
@@ -15,9 +15,15 @@ for (let pokemon of pokemonsDuplicados) {
   img.src = pokemon.image;
   div.appendChild(img);
   container.appendChild(div);
-  div.addEventListener("click", (event) => {
-    //Ao clicar verifique: é a primeira ou a segunda carta? Se for a primeira fixa, se for a segunda
-    // e estiver correto mantenha as duas fixadas, se for a incorreta, vire novamente as duas cartas.
+  div.addEventListener("click", clickCarta);
+  //Ao clicar verifique: é a primeira ou a segunda carta? Se for a primeira fixa, se for a segunda
+  // e estiver correto mantenha as duas fixadas, se for a incorreta, vire novamente as duas cartas.
+
+  function clickCarta(event) {
+    if (clickBloqueado) {
+      return;
+    }
+
     if (eSegundacarta == true) {
       console.log("É Segunda carta");
       segundaCarta = event.target.firstChild.src;
@@ -32,10 +38,12 @@ for (let pokemon of pokemonsDuplicados) {
       } else {
         console.log(imagemDaprimeiraCarta);
         img.style.display = "none";
+        clickBloqueado = true;
         setTimeout(function () {
           img.style.display = "none";
           imagemDaprimeiraCarta.style.display = "none";
-        }, 5000); // 5000 milissegundos = 5 segundos
+          clickBloqueado = false;
+        }, 2000); // 2000 milissegundos = 2 segundos
         img.style.display = "block";
       }
     } else {
@@ -46,6 +54,34 @@ for (let pokemon of pokemonsDuplicados) {
       console.log("É Primeira carta");
       img.style.display = "block";
     }
-  });
+  }
 }
 let eSegundacarta = false;
+
+document.getElementById('botao1').addEventListener("click", start);
+
+let segundos = 0;
+let intervalo;
+function start() {
+  segundos = 0;
+
+  if(intervalo){
+    clearInterval(intervalo);
+  }
+
+  intervalo = setInterval(crono, 1000);
+}
+function crono() {
+  segundos = segundos + 1;
+    document.getElementById("cronometro").innerText = segundos;
+}
+
+function reiniciar() {
+  start ();
+  const imagens= document.getElementsByTagName('img')
+  //fazer um for para cada imagem e colocar none nelas
+  img.style.display = "none"; //colocar isso dentro do for
+  }
+
+document.getElementById('botao2').addEventListener("click", reiniciar);
+

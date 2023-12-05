@@ -24,6 +24,11 @@ html{
 body{
     background-color: #e093ff;
 }
+.todosbotoes
+{
+    max-width: 360px;
+    text-align: center;
+}
 button{
     background-position: center;
     width: 140px;
@@ -33,4 +38,14 @@ button{
     border: 8px solid black;
     border-radius: 5px;
     justify-content: center;
+}
+h2 {
+    background-position: left;
+    width: 140px;
+    background-color: rgb(197, 46, 147);
+    padding: 28px;
+    margin: auto;
+    border: 8px solid black;
+    border-radius: 5px;
+  text-align: center;
 }
