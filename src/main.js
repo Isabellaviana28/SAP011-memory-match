@@ -1,3 +1,4 @@
+import pokemon from "./data/pokemon/pokemon.js";
 import data from "./data/pokemon/pokemon.js";
 let primeiraCarta = "";
 let segundaCarta = "";
@@ -59,7 +60,13 @@ for (let pokemon of pokemonsDuplicados) {
 let eSegundacarta = false;
 
 document.getElementById('botao1').addEventListener("click", start);
+function virarCards (){
+  const imagens= document.getElementsByTagName('img')
+  for (let img of imagens ){
+    img.style.display = "none"; 
+  }
 
+}
 let segundos = 0;
 let intervalo;
 function start() {
@@ -70,6 +77,8 @@ function start() {
   }
 
   intervalo = setInterval(crono, 1000);
+  setTimeout(msgEncerramento, 5000);
+  virarCards();
 }
 function crono() {
   segundos = segundos + 1;
@@ -78,10 +87,15 @@ function crono() {
 
 function reiniciar() {
   start ();
-  const imagens= document.getElementsByTagName('img')
-  //fazer um for para cada imagem e colocar none nelas
-  img.style.display = "none"; //colocar isso dentro do for
-  }
+  virarCards();
+}
 
 document.getElementById('botao2').addEventListener("click", reiniciar);
 
+//Quando chegar em cinco minutos o usuario deverá tentar novamente
+function msgEncerramento() {
+  alert('Seu tempo acabou!! Tente novamente!!');
+  clearInterval (intervalo)
+  }
+
+  
