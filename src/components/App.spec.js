@@ -1,6 +1,6 @@
 import App from './App.js';
 
-describe('App', () => {
+describe('testes da funções do main js', () => {
   it('should render without crashing', () => {
     const el = App();
     expect(el instanceof HTMLElement).toBe(true);
