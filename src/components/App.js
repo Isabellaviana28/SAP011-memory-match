@@ -108,7 +108,7 @@ export function iniciarPagina() {
     }
 
     intervalo = setInterval(crono, 1000);
-    setTimeout(msgEncerramento, 50000);
+    setTimeout(msgEncerramento, 500000);
     virarCards();
   }
   function crono() {
